@@ -25,6 +25,13 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+
+/* takes in a string of numbers and returns an array of numbers*/
+const numToString = (string) => {
+  let cardArray = string.split('');
+  return cardArray
+};
+
 /* takes in an array of numbers 
 (credit card number seperated by number) */
 /* returns true if card is good and false if bad*/
@@ -89,9 +96,6 @@ const idInvalidCardCompanies = (cardArray) => {
   } ;
   return badCompanys;
 };
-
-console.log(idInvalidCardCompanies(findInvalidCards(batch)))
-
 
 
 
