@@ -1,0 +1,89 @@
+// Returns a random DNA base
+const returnRandBase = () => {
+  const dnaBases = ['A', 'T', 'C', 'G']
+  return dnaBases[Math.floor(Math.random() * 4)] 
+}
+
+// Returns a random single strand of DNA containing 15 bases
+const mockUpStrand = () => {
+  const newStrand = []
+  for (let i = 0; i < 15; i++) {
+    newStrand.push(returnRandBase())
+  }
+  return newStrand
+}
+
+const pAequorFactory = (number, dna) => {
+  return {
+    specimenNum: number,
+    dna: dna,
+    //mutates a single dna
+    mutate() {
+        let i = Math.floor(Math.random() * 15);
+        switch (this.dna[i]) {
+          case 'A':
+      const dnaBasesA = ['T', 'C', 'G']
+      this.dna[i] = dnaBasesA[Math.floor(Math.random() * 3)] 
+            break;
+            case 'T':
+      const dnaBasesT = ['A', 'C', 'G']
+      this.dna[i] = dnaBasesT[Math.floor(Math.random() * 3)] 
+            break;
+            case 'C'://
+      const dnaBasesC = ['A', 'T', 'G']
+      this.dna[i] = dnaBasesC[Math.floor(Math.random() * 3)] 
+            break;
+            case 'G':
+      const dnaBasesG = ['T', 'C', 'A']
+      this.dna[i] = dnaBasesG[Math.floor(Math.random() * 3)] 
+            break;
+        }
+    },
+    // takes in a pAequor specimenNum (name.specimenNum)
+    compareDNA(pAequorSN) {
+      let dnaInCommon = 0;
+      for (i = 0; i < this.dna.length; i++) {
+        if (this.dna[i] === pAequorSN.dna[i]) {
+          dnaInCommon++
+        }
+      }
+      let percentCommon = dnaInCommon / 15 * 100;
+      console.log(`specimen #1 and specimen #2 have ${percentCommon}% DNA in common`)
+    },
+    // returns true if the pAequor is likely to survive
+    willLikelySurvive() {
+      let goodCount = 0;
+      for (i = 0; i < this.dna.length; i++) {
+        if (this.dna[i] === 'C' || this.dna[i] === 'G') {
+          goodCount++;
+        }
+      }
+      if (goodCount >= 9) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  }
+};
+
+//takes in an empty array and fills it with 30 samples
+const create30 = (emptyArray) => {
+  for (i = 0; i <= 30; i++) {
+    emptyArray.push(pAequorFactory(i, mockUpStrand()))
+  }
+};
+
+const samples30 = [];
+
+create30(samples30);
+console.log(samples30)
+
+
+
+
+
+
+
+
+
