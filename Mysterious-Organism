@@ -47,9 +47,11 @@ const pAequorFactory = (number, dna) => {
           dnaInCommon++
         }
       }
-      let percentCommon = dnaInCommon / 15 * 100;
-      console.log(`specimen #1 and specimen #2 have ${percentCommon}% DNA in common`)
+      let percentCommon = Math.floor(dnaInCommon / 15 * 100);
+      /*console.log(`specimen #${this.specimenNum} and specimen #${pAequorSN.specimenNum} have ${percentCommon}% DNA in common`);*/
+      return(`specimen #${this.specimenNum} and specimen #${pAequorSN.specimenNum} have ${percentCommon}% DNA in common`)
     },
+    
     // returns true if the pAequor is likely to survive
     willLikelySurvive() {
       let goodCount = 0;
@@ -64,12 +66,33 @@ const pAequorFactory = (number, dna) => {
         return false;
       }
     },
+    // returns a strand of dna that complements the original
+    complementStrand() {
+      let complementDna = this.dna;
+      for (i = 0; i< complementDna.length; i++) {
+        switch (complementDna[i]) {
+          case 'A':
+          this.dna[i] = 'T';
+          break;
+          case 'T':
+          this.dna[i] = 'A';
+          break;
+          case 'C':
+          this.dna[i] = 'G';
+          break;
+          case 'G':
+          this.dna[i] = 'C';
+          break;
+        };
+      };
+      return complementDna;
+    },
   }
 };
 
 //takes in an empty array and fills it with 30 samples
 const create30 = (emptyArray) => {
-  for (i = 0; i <= 30; i++) {
+  for (i = 0; i < 30; i++) {
     emptyArray.push(pAequorFactory(i, mockUpStrand()))
   }
 };
@@ -77,13 +100,31 @@ const create30 = (emptyArray) => {
 const samples30 = [];
 
 create30(samples30);
-console.log(samples30)
+ 
 
+// Takes in nested arrays of samples and returns the first set of 
+// most related samples
+const getTwoBest = (nestedArrays) => {
+  let strings = [];
+  let percents = [];
+  let highestPercent = 0;
+  for (let i = 0; i < nestedArrays.length; i++) {
+    for (let v = 0; v < nestedArrays.length; v++) {
+      if (i !== v){
+        strings.push(nestedArrays[i].compareDNA(nestedArrays[v]))
+      }
+    }
+  }
+  strings.forEach(string => percents.push(string.substr(-17, 2)));
+  highestPercent = Math.max(...percents);
+  let stringPercent = `${highestPercent}%`;
 
+  for (let j = 0; j < strings.length; j++) {
+    if (stringPercent === strings[j].substr(-17, 3)) {
+     return strings[j]
+    }
+  }
 
+}
 
-
-
-
-
-
+console.log(getTwoBest(samples30))
