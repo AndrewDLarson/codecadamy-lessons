@@ -1,16 +1,14 @@
-// The issue was: we where trying to console.log() the the return of determineWinner. by doing this the function playGame would try to console.log(console.log()) resulting in an undefined result
-
 const getUserChoice = userInput =>{
 userInput = userInput.toLowerCase();
-if (userInput === 'rock' || userInput === 'paper' || userInput === "scissors"){
+if (userInput === 'rock' || userInput === 'paper' || userInput === "scissors" || userInput === 'bomb'){
   return userInput
 }
 else{
-  console.log('error, please make a valid choice.')
+  return console.log('error, please make a valid choice.')
 };
 };
 function getComputerChoice() {
-  randomNumber = Math.floor(Math.random() * 3);
+   randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber){
     case 0 :
     return 'rock';
@@ -23,6 +21,10 @@ function getComputerChoice() {
   };
 };
 function determineWinner(userChoice, computerChoice){
+ if(userChoice === 'bomb') {
+   return 'you win'
+ }
+ else{
   if (userChoice === computerChoice){
     return 'tie'
   }
@@ -51,15 +53,16 @@ function determineWinner(userChoice, computerChoice){
       return 'you win';
     }
   }
-}}
+}}}
 
 
 const playGame = () => {
-  const userChoice = getUserChoice('rock');
+  const userChoice = getUserChoice('bomb');
   const computerChoice = getComputerChoice();
   console.log('you picked: ' + userChoice);
-  console.log('the computer picked: ' + computerChoice)
-  console.log(determineWinner(userChoice, computerChoice))
-}
+  console.log('the computer picked: ' + computerChoice);
+  console.log(determineWinner(userChoice, computerChoice));
+};
+
 
 playGame()
