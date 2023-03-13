@@ -1,0 +1,49 @@
+/*
+
+
+Write a function subLength() that takes 2 parameters, a string and a single character.
+The function should search the string for the two occurrences of the character and return the length between them including the 2 characters.
+If there are less than 2 or more than 2 occurrences of the character the function should return 0.
+
+Examples:
+
+subLength('Saturday', 'a'); // returns 6
+subLength('summer', 'm'); // returns 2
+subLength('digitize', 'i'); // returns 0
+subLength('cheesecake', 'k'); // returns 0
+
+
+*/
+
+
+
+
+
+
+const subLength = (string, character) => {
+  let characterCount = 0;
+  for (i = 0; i < string.length; i++){
+    if (string[i] === character) {
+      characterCount++
+    }
+  }
+  if (characterCount < 2) {
+    return 0;
+  } else if (characterCount > 2) {
+    return 0;
+  } else if (characterCount === 2){
+
+    for (i=0; i< string.length; i++){
+      for (v=0; v< string.length; v++) {
+        if (i !== v && string[i] === character && string[v] === character) {
+          return v - i + 1;
+        }
+      }
+    }
+  } 
+}
+
+console.log(subLength('saturday', 'a'));
+console.log(subLength('summer', 'm'));
+console.log(subLength('digitize', 'i'));
+console.log(subLength('cheesecake', 'k'));
