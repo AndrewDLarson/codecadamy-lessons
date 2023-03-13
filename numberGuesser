@@ -1,0 +1,35 @@
+
+let humanScore = 0;
+let computerScore = 0;
+let currentRoundNumber = 1;
+
+// Write your code below:
+const generateTarget = () => {
+   return Math.floor(Math.random() * 9)
+};
+const compareGuesses = (humanGuess, compGuess, secretNumber) => {
+  if (humanGuess >= 0 && humanGuess <= 9) {
+    const humanAbs = Math.abs(humanGuess - secretNumber);
+    const compAbs = Math.abs(compGuess - secretNumber);
+    if (humanAbs > compAbs) {
+        return false;
+    } else if (humanAbs < compAbs) {
+        return true;
+    } else if (humanAbs === compAbs) {
+        return true;
+    }
+  } else {
+    alert('Please enter a number between 0 and 9.')
+  }   
+};
+
+const updateScore = (winner) => {
+    if (winner === 'human') {
+        humanScore += 1;
+    } else if (winner === 'computer') {
+        computerScore += 1;
+    }
+};
+const advanceRound = () => {
+  currentRoundNumber = currentRoundNumber + 1;
+};
