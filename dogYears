@@ -1,0 +1,8 @@
+let myAge = 33; //my age can change with time, so i put it as a changeable variable;
+let earlyYears = 2; //we are making what i would beleive to be the first 2 years on a dogs life into a variable;
+earlyYears = earlyYears * 10.5; //we change the value assigned to earlyYears to multiply by 10.5;
+let laterYears = myAge - 2; // this should take 2 years off earlyYears to account for the first 2 years of a dogs life
+laterYears = laterYears * 4; //multiplying the later years by 4 to account for the dog years;
+let myAgeInDogYears = earlyYears + laterYears //combining both years
+let myName = 'Andrew Larson'.toLowerCase(); //adding my name to a variable and making ir lowercase
+console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`); // this should print me out a string explainging how old i am in human and dog years.
