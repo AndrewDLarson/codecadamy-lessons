@@ -1,3 +1,5 @@
+// The issue was: we where trying to console.log() the the return of determineWinner. by doing this the function playGame would try to console.log(console.log()) resulting in an undefined result
+
 const getUserChoice = userInput =>{
 userInput = userInput.toLowerCase();
 if (userInput === 'rock' || userInput === 'paper' || userInput === "scissors"){
@@ -22,31 +24,31 @@ function getComputerChoice() {
 };
 function determineWinner(userChoice, computerChoice){
   if (userChoice === computerChoice){
-    return console.log('tie')
+    return 'tie'
   }
   else{
   if (userChoice === 'rock'){
     if (computerChoice === 'paper'){
-      return console.log('computer won')
+      return 'computer won'
     }
     else {
-      return console.log('you win')
+      return 'you win'
     }
   }
   if (userChoice === 'paper'){
     if (computerChoice === 'scissors'){
-      return console.log('computer won')
+      return 'computer won'
     }
     else {
-      return console.log('you win')
+      return 'you win'
     }
   }
   if (userChoice === 'scissors'){
     if (computerChoice === 'rock'){
-      return console.log('computer wins')
+      return 'computer wins'
     }
     else {
-      return console.log('you win');
+      return 'you win';
     }
   }
 }}
@@ -61,4 +63,3 @@ const playGame = () => {
 }
 
 playGame()
-
