@@ -5,4 +5,15 @@ let laterYears = myAge - 2; // this should take 2 years off earlyYears to accoun
 laterYears = laterYears * 4; //multiplying the later years by 4 to account for the dog years;
 let myAgeInDogYears = earlyYears + laterYears //combining both years
 let myName = 'Andrew Larson'.toLowerCase(); //adding my name to a variable and making ir lowercase
-console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`); // this should print me out a string explainging how old i am in human and dog years.
+/*console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`); // this should print me out a string explainging how old i am in human and dog years.*/
+//My goal is to add info to display the current info and info for 4 years in the future;
+let future = 4; //how many years into the future that we want to calculate
+let futureAge = myAge +  future; // my age (variable) years in the future
+let dogMultiplyer = future * 4 //this should adjust the years past to dog years
+let futureDogAge = myAgeInDogYears + dogMultiplyer // this should give me the age in dog years in the future
+
+if (myAge === 1) {myAgeInDogYears = 10.5} //should adjust the current year to be acurate for dog years at 1 human year old
+
+console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years. In ${future} years i will be ${futureAge} years old in human years and ${futureDogAge} years old in dog years.`);
+//this seems to work with any age 2 and above. If i am one year old, it will compute but display the wrong info.
+// This now works for a single human year converting to dog years with the addition of line 15, but the future years sill needs to be adjusted to make it right.
