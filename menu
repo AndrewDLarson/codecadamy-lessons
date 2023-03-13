@@ -1,0 +1,31 @@
+const menu = {
+  _meal: '',
+  _price: 0,
+  set meal (mealToCheck) {
+    if(typeof mealToCheck === 'string'){
+      return this._meal = mealToCheck;
+    }
+  },
+  set price (priceToCheck){
+    if (typeof priceToCheck === 'number'){
+      return this._price = priceToCheck
+    }
+  },
+  get todaysSpecial (){
+    if (typeof this._meal === 'string' && typeof this._price === 'number'){
+      return `Today\'s Special is ${this._meal} for \$${this._price}`
+    } else {
+      return 'Meal of price was not set corectly!'
+    }
+  }
+
+
+};
+menu.meal = 'Spaghetti';
+menu.price = 5;
+
+console.log(menu.todaysSpecial);
+
+
+
+//If you want to extend your learning on this project, try adding an array of meals and prices to randomly set and get Today’s Special!
