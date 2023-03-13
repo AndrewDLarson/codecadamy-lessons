@@ -1,0 +1,29 @@
+let input = 'I feel like this will be a difficult one!';
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+const resultArray = [];
+
+input = input.toLowerCase()
+
+for (let inputIndex = 0; inputIndex < input.length; inputIndex++){
+  //console.log(inputIndex)
+
+    if (input.charAt(inputIndex) === 'e'){
+          resultArray.push('e')
+        }
+    if (input.charAt(inputIndex) === 'u'){
+          resultArray.push('u')
+        }
+
+  for (let vowelIndex =0; vowelIndex < vowels.length; vowelIndex++){
+     // console.log(vowelIndex)
+     if (input.charAt(inputIndex) === vowels[vowelIndex]){
+       //console.log(vowels[vowelIndex])
+       resultArray.push(vowels[vowelIndex])
+     }
+  }
+}
+//console.log(resultArray)
+
+const resultString = resultArray.join('').toUpperCase()
+
+console.log(resultString)
