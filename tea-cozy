@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tea Cozy</title>
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img id="teacozy" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-tea-cozy-logo.png?_gl=1*1gg4uai*_ga*NTUwMzM5OTgwNy4xNjczMzg2MDg5*_ga_3LRZM6TM9L*MTY3NjMwMzQwOC4xMzUuMS4xNjc2MzA0MTQ0LjU3LjAuMA..">
+            <ul id="internallinks">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#teamonth">Featured Tea</a></li>
+                <li><a href="#location">Locations</a></li>
+            </ul>
+        </header>
+        <main>
+<div id="fix">
+            <div id="mission">
+                <div id="statement">
+                    <h2>Our Mission</h2>
+                    <h4>Handpicked, Artisanally Curated, Free Range, Sustainable, Small Batch, Faif Trade, Organic Tea</h4>
+                </div>
+            </div>
+</div>
+            <div id="teamonth">
+                <div id="teamonthtitle">
+                    <h2>Tea of the Month</h2>
+                    <h4>What's Steeping at The Tea Cozy</h4>
+                </div>
+                <div id="teas">
+                    <div class="teatype">
+                        <img  class="teaimg" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-berryblitz.jpg?_gl=1*1gg4uai*_ga*NTUwMzM5OTgwNy4xNjczMzg2MDg5*_ga_3LRZM6TM9L*MTY3NjMwMzQwOC4xMzUuMS4xNjc2MzA0MTQ0LjU3LjAuMA..">
+                        <h4>Fall Berry Blitz Tea</h4>
+                    </div>
+
+                    <div class="teatype">
+                        <img  class="teaimg" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-spiced-rum.jpg?_gl=1*1gg4uai*_ga*NTUwMzM5OTgwNy4xNjczMzg2MDg5*_ga_3LRZM6TM9L*MTY3NjMwMzQwOC4xMzUuMS4xNjc2MzA0MTQ0LjU3LjAuMA..">
+                        <h4>Spiced Rum Tea</h4>
+                    </div>
+
+                    <div class="teatype">
+                        <img  class="teaimg" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-donut.jpg?_gl=1*1gg4uai*_ga*NTUwMzM5OTgwNy4xNjczMzg2MDg5*_ga_3LRZM6TM9L*MTY3NjMwMzQwOC4xMzUuMS4xNjc2MzA0MTQ0LjU3LjAuMA..">
+                        <h4>Seasonal Donuts</h4>
+                    </div>
+
+                    <div class="teatype">
+                        <img  class="teaimg" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-myrtle-ave.jpg?_gl=1*1gg4uai*_ga*NTUwMzM5OTgwNy4xNjczMzg2MDg5*_ga_3LRZM6TM9L*MTY3NjMwMzQwOC4xMzUuMS4xNjc2MzA0MTQ0LjU3LjAuMA..">
+                        <h4>Myrtle Ave Tea</h4>
+                    </div>
+
+                    <div class="teatype">
+                        <img  class="teaimg" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-bedford-bizarre.jpg?_gl=1*1gg4uai*_ga*NTUwMzM5OTgwNy4xNjczMzg2MDg5*_ga_3LRZM6TM9L*MTY3NjMwMzQwOC4xMzUuMS4xNjc2MzA0MTQ0LjU3LjAuMA..">
+                        <h4>Bedford Bizarre Tea</h4>
+                    </div>
+                    
+                </div>
+            </div>
+            
+                
+            
+            <div id="location">
+                <h2>Locations</h2>
+                <div class="locationbox">
+                    <h3>Downtown</h3>
+                    <h4>384 West 4th St</h4>
+                    <h4>Suite 108</h4>
+                    <h4>Portland, Main</h4>
+                    </div>
+
+                <div class="locationbox">
+                    <h3>East Bayside</h3>
+                    <h4>3433 Phisherman's Avenue</h4>
+                    <h4>(Northewest Corner)</h4>
+                    <h4>Portland, Maine</h4>
+                </div>
+
+                <div class="locationbox">
+                    <h3>Oakdale</h3>
+                    <h4>515 Crescent Avenue</h4>
+                    <h4>Second Floor</h4>
+                    <h4>Portland, Maine</h4>
+                </div>
+            </div>
+            
+            <div id="info">
+                <h2>The Tea Cozy</h2>
+                <h5>contact@theteacozy.com</h5>
+                <h5>917-555-8904</h5>
+            </div>
+        
+        </main>
+
+        <footer>
+            <p>copyright The Tea Cozy 2017</p>
+        </footer>
+
+    </body>
+</html>
