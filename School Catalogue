@@ -1,0 +1,118 @@
+//parent class school
+
+class School {
+  constructor(name, level, numberOfStudents){
+    this._name = name;
+    this._level = level;
+    this._numberOfStudents = numberOfStudents;
+  }
+  get name() {
+    return this._name;
+  }
+  get level() {
+    return this._level;
+  }
+  get numberOfStudents() {
+    return this._numberOfStudents;
+  }
+  set newNumberOfStudents(students) {
+    if (typeof students === "number") {
+      this._numberOfStudents = students;
+    } else {
+      console.log("Invalid input: numberOfStudents must be set to a Number.")
+    }
+  }
+  quickFacts() {
+    console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`)
+  }
+  static pickSubstituteTeacher(substituteTeacher) {
+    let randomNumber = Math.floor(Math.random()*substituteTeacher.length);
+    return substituteTeacher[randomNumber];
+  }
+}
+
+//child class primary
+
+class Primary extends School {
+  constructor(name, numberOfStudents, pickupPolicy) {
+    super(name, 'Primary', numberOfStudents);
+    this._pickupPolicy = pickupPolicy;
+  }
+  get pickupPolicy() {
+    return this._pickupPolicy;
+  }
+}
+
+//child class middle
+
+class Middle extends School {
+  constructor(name, numberOfStudents) {
+     super(name, 'Middle', numberOfStudents);
+  }
+}
+
+//child class high
+
+class High extends School {
+  constructor(name, numberOfStudents, sportsTeams) {
+    super(name, 'High', numberOfStudents);
+    this._sportsTeams = sportsTeams;
+  }
+  get sportsTeams() {
+    console.log(this._sportsTeams);
+  }
+}
+
+const lorraineHansbury = new Primary("Lorraine Hansbury", 514, "Students must be picked up by a parent, guardian, or a family member over the age of 13.")
+
+//lorraineHansbury.quickFacts()
+
+const alSmith = new High('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'])
+
+//alSmith.sportsTeams
+
+class SchoolCatalog {
+  constructor() {
+  this._primary = [];
+  this._middle = [];
+  this._high = [];
+  this._all = [];
+  }
+  get primary() {
+    return this._primary;
+  }
+  get middle() {
+    return this._middle;
+  }
+  get high() {
+    return this._high;
+  }
+  get all() {
+    return this._all;
+  }
+  addSchool(school) {
+    let type = school.constructor.name;
+    switch (type) {
+      case 'Primary':
+      this._primary.push(school);
+       this._all.push(school);
+      break;
+      case 'Middle':
+      this._middle.push(school);
+      this._all.push(school);
+      break;
+      case 'High':
+      this._high.push(school);
+      this._all.push(school);
+      break;
+    }
+  }
+}
+
+
+const catalog = new SchoolCatalog
+catalog.addSchool(alSmith)
+catalog.addSchool(lorraineHansbury)
+
+console.log(catalog.all)
+
