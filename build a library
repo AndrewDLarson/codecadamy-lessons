@@ -101,34 +101,89 @@ class Cd extends Media {
 
 let risk = new Cd('Megadeth', 'Risk', ['Insomnia', 'Enter the Arena', 'Crush em', 'Breadline', 'The Doctors Calling', 'Ill be there', 'Wanderlust', 'Ecstacy', 'Seven', 'Time 1', 'Time 2'])
 //console.log(risk.songs)
-console.log(risk.shuffle())
 
 
 
 
-/*
+
+
 let historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
 
 historyOfEverything.toggleCheckOutStatus();
-console.log(historyOfEverything.isCheckedOut)
+//console.log(historyOfEverything.isCheckedOut)
 historyOfEverything.addRating(4);
 historyOfEverything.addRating(5);
 historyOfEverything.addRating(5);
-console.log(historyOfEverything.getAverageRating());
+//console.log(historyOfEverything.getAverageRating());
 
 let speed = new Movie('Jan de Bont', 'Speed', 116);
 speed.toggleCheckOutStatus();
-console.log(speed.isCheckedOut);
+//console.log(speed.isCheckedOut);
 speed.addRating(5);
 speed.addRating(1);
 speed.addRating(5);
-console.log(speed.getAverageRating())*/
+//console.log(speed.getAverageRating())
 
 
 class Catalog {
-  constructor(item){
-  let log = [];
-  log.push(item);
+  constructor() {
+    this._books = [];
+    this._movies = [];
+    this._cds = [];
+    this._other = [];
+    this._all = [];
+  }
+  get books() {
+    return this._books;
+  }
+  get movies() {
+    return this._movies;
+  }
+  get cds() {
+    return this._cds;
+  }
+  get other() {
+    return this._other;
+    }
+  get all() {
+      return this._all;
+    }
+  set addBook(book) {
+    this._books.push(book);
+    this._all.push(book);
+  }
+  set addMovie(movie) {
+    this._movies.push(movie);
+    this._all.push(movie);
+  }
+  set addCd(cd) {
+    this._cds.push(cd);
+    this._all.push(cd);
+  }
+  set other(anything) {
+    this._other.push(anything)
+    this._all.push(anything);
+  }
+  addMedia(item) {
+    let section = item.constructor.name;
+    if (section == 'Book'){
+      this._books.push(item);
+    } else if (section == 'Movie') {
+      this._movies.push(item)
+    } else if (section == 'Cd') {
+      this._cds.push(item)
+    } else {
+      this._other.push(item)
+    }
+    this._all.push(item);
   }
 }
+let main = new Catalog;
+
+
+main.addMedia(historyOfEverything);
+main.addMedia('test item');
+main.addMedia(risk);
+main.addMedia(speed);
+console.log(main.all);
 
