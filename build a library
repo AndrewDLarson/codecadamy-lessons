@@ -87,7 +87,7 @@ class Cd extends Media {
     return this._songs;
   }
   shuffle() {
-    let phoList = this._songs;
+    let phoList = [...this._songs];
     let randomSongs = [];
     for (let i = phoList.length ; i >= phoList.length; i--) {
        let number = Math.floor(Math.random()*phoList.length);
@@ -102,6 +102,9 @@ class Cd extends Media {
 let risk = new Cd('Megadeth', 'Risk', ['Insomnia', 'Enter the Arena', 'Crush em', 'Breadline', 'The Doctors Calling', 'Ill be there', 'Wanderlust', 'Ecstacy', 'Seven', 'Time 1', 'Time 2'])
 //console.log(risk.songs)
 
+console.log(risk.shuffle())
+console.log(risk.shuffle())
+console.log(risk.shuffle())
 
 
 
@@ -181,9 +184,9 @@ class Catalog {
 let main = new Catalog;
 
 
-main.addMedia(historyOfEverything);
+/*main.addMedia(historyOfEverything);
 main.addMedia('test item');
 main.addMedia(risk);
 main.addMedia(speed);
-console.log(main.all);
+console.log(main.all);*/
 
