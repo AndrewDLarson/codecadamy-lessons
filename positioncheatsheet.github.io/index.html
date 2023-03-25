@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Positioning Cheatsheet</title>
+        <link href="./style.css" rel="stylesheet">
+    </head>
+<!--test-->
+    <body>
+
+        <header>
+            <h1>Display and Positioning Cheatsheet</h1>
+
+            <ul id="navigation">
+                <li><a href="#fixed">Fixed position</a></li>
+                <li><a href="#absolute">Absolute position</a></li>
+                <li><a href="#static">Static position</a></li>
+                <li><a href="#relative">Relative position</a></li>
+                <li><a href="#sticky">Sticky position</a></li>
+                <li><a href="#zindex">Z-index property</a></li>
+                <li><a href="#display">Display property</a></li>
+                <li><a href="#float">Float property</a></li>
+                <li><a href="#clear">Clear Property</a></li>
+                <li><a href="#csstable">CSS table</a></li>
+            </ul>
+
+        </header>
+
+        <main>
+            <div id="fixed">
+                <h2>Fixed position</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        The fixed position removes the element from the document flow. No space is created in the document for the element.
+                        The element is pinned to that exact spot on the page. The element will stay the same regardless of scroling.
+                        You must then position the rest of the page below the fixed element or they will overlap. This can be done with position: relative;
+                    </p>
+                    <p class="example">
+                        <strong>EXAMPLE:</strong> is shown in header. It stays stationary as you scroll the page.<br>
+                    </p>
+                </div>
+            </div>
+            
+            <div id="absolute">
+                <h2>absolute position</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        Positions an element in a parent element that has the position relative or absolute. Ignores all sibling elements, 
+                        so it is possible they overlap if they are not centered correctly.
+                    </p>
+                    <p class="example">
+                        <strong>EXAMPLE</strong> The green square is positioned with absolute inside its parent element, the purple square. I can move the green 
+                        square around inside the purple square by adjusting the top, right, left, and bottom.
+                    </p>
+                    <div class="example" id="square1">
+                        <div id="square2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="static">
+                <h2>static position</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        Static is how the HTML looks without any CSS moveing elements around.
+                        This is the default.
+                    </p>
+                    <p class="example">
+                        <strong>EXAMPLE:</strong> There has been no adjustment to the position of this box. <br>
+                        (asside from the inline-block display)
+                    </p>
+                </div>
+            </div>
+
+            <div id="relative">
+                <h2>Relative position</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        Lets an element be positioned relative to its static position. Without any offset properties, 
+                        the element will remain in its static position.
+                    </p>
+                    <div class="example">
+                        <p><strong>EXAMPLE:</strong></p>
+                        <div id="relativeoriginal">
+                            <p>original spot <br> static position</p>
+                        </div>
+                        <div id="relativemoved">
+                            <p>position: relative <br> left: 150px;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sticky">
+                <h2>sticky position</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        Allows and element to move around the page as its being scrolled from one set position to another.
+                        To set the position, use: top, right, bottom, and left.
+                    </p>
+                    <p class="example">
+                        <strong>EXAMPLE:</strong><br>The footer has the position of sticky and it follows 
+                        along as you scroll.
+                    </p>
+                </div>
+            </div>
+
+            <div id="zindex">
+                <h2>Z-index property</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        The level that the element is on. Almost like paper overlaping, 0 is the lowest and 10 is on top.
+                    </p>
+                    <p class="example" id="zindexbox1">
+                        <strong>EXAMPLE:</strong> This box has a z-index of 1, while the orange box has a z-index of 0.
+                    </p>
+                    <div id="zindexbox2"></div>
+                </div>
+            </div>
+
+            <div id="display">
+                <h2>display property</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        Determines the type of block an element will have.
+                        Elements can have: block, inline, and inline-block displays
+                    </p>
+                    <p class="example">
+                        <strong>EXAMPLE:</strong> The blue explenation boxes and the green example boxes have inline-box display. meaning they are boxes that can be on the same line.
+                        <br>
+                        <br>
+                        The heading "Display and Positioning Cheatsheet" would be considered a block display taking up its line.
+                        <br>
+                        <br>
+                        The "example:" in this square is an inline display, as it can stay in a line of other text.
+                    </p>
+                </div>
+            </div>
+
+            <div id="float">
+                <h2>float property</h2>
+                <div class="lesson">
+                    <p class=" discription">
+                        An element is floated to the left or right and other elements will wrap around it.
+                    </p>
+                    <p class="example">
+                        <strong id="floater">EXAMPLE:</strong> This set of text wraps around the example tag. In order for it to wrap around though, 
+                        it would have to be long enough to take up all the space on the right side and then continue to take up space underneath.
+                    </p>
+                </div>
+            </div>
+
+            <div id="clear">
+                <h2>clear property</h2>
+                <div class="lesson">
+                    <p class="discription">
+                        Tells an element how to behave when it bumps into another element in the same container.
+                    </p>
+                    <div class="example">
+                        <strong id="clearer">EXAMPLE:</strong> <p id="needclear">The "example" is floated to the left. But we dont want 
+                        this text to wrap around, so we add 'clear: left' to the this element.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="csstable">
+                <h2>CSS Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>CSS property</th>
+                        <th>What it does</th>
+                        <th>Positon or Property</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Position</td>
+                        <td>Dictates where an element will be. Can be: fixed, absolute, static, relative, or sticky.</td>
+                        <td>Property</td>
+                    </tr>
+                    <tr>
+                        <td>Fixed</td>
+                        <td>Locks and element to the screen</td>
+                        <td>Position</td>
+                    </tr>
+                    <tr>
+                        <td>Absolute</td>
+                        <td>Locks an element in its parent container that has the relative or absolute position</td>
+                        <td>Position</td>
+                    </tr>
+                    <tr>
+                        <td>Static</td>
+                        <td>Displays an element exactly as it would be in html</td>
+                        <td>Position</td>
+                    </tr>
+                    <tr>
+                        <td>Relative</td>
+                        <td>Moves an element relative to its static position</td>
+                        <td>Position</td>
+                    </tr>
+                    <tr>
+                        <td>Sticky</td>
+                        <td>Allows an element to scroll with the screen untill a set point</td>
+                        <td>Position</td>
+                    </tr>
+                    <tr>
+                        <td>Z-index</td>
+                        <td>Adjusts the layer the element is 0-9</td>
+                        <td>Property</td>
+                    </tr>
+                    <tr>
+                        <td>Display</td>
+                        <td>Can be: block, inline-bock or inline</td>
+                        <td>Property</td>
+                    </tr>
+                    <tr>
+                        <td>Float</td>
+                        <td>Moves an element to the left of right. Other elements can wrap around</td>
+                        <td>Property</td>
+                    </tr>
+                    <tr>
+                        <td>Clear</td>
+                        <td>Decides what an element does when it bumps into another</td>
+                        <td>Property</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+
+
+        </main>
+
+        <footer>
+            <P>This site was made by Andrew Larson</P>
+
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+</html>
