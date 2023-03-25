@@ -1,0 +1,106 @@
+html {background-color: rgb(34, 31, 31);}
+h1 {
+    text-align: center;
+    font-size: 75px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 150, 7);
+    font-family: 'Metal Mania';
+    letter-spacing: 3px;
+}
+
+.section {
+    border: 3px solid black;
+    width: max-content;
+    padding: 15px;
+    position: relative;
+    margin: 15px;
+    float: left;
+    background-color: white;
+}
+
+
+.colorsample {
+    display: inline-block;
+    width: 150px;
+    margin: 5px 15px;
+    vertical-align: top;
+}
+
+h1, h2, h3, h4 {
+    text-transform: capitalize;   
+}
+
+h3 {
+    margin-top: 50px;
+}
+.center {
+    text-align: center;
+}
+
+.colorblock {
+    height: 50px;
+    width: 150px;
+}
+
+#atomicnightmare {
+    background-color:  rgb(3, 133, 3);
+}
+
+#neonwords {
+    background-color: rgb(10, 247, 10);
+}
+
+#blackground {
+    background-color: rgb(34, 31, 31);
+}
+
+#middlegreen {
+    background-color: rgb(0, 150, 7);
+}
+
+
+.atomicage {
+    font-family: 'Atomic Age', cursive;
+}
+
+.metalmania {
+    font-family: 'Metal Mania', cursive;
+}
+
+.newrocker {
+    font-family: 'New Rocker', cursive;
+}
+
+.note {
+    font-size: 12px;
+    margin: 50px 0px;
+}
+
+#josefinsans {
+    font-family: 'Josefin Sans';
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+#introstatment {
+    color: rgb(10, 247, 10);  
+    font-family: 'Atomic Age';
+}
+
+footer {
+    clear: both;
+    background-color: rgb(15, 14, 14);
+    color: rgb(10, 247, 10);
+    padding: 3px;
+    font-size: 12px;
+}
+
+footer a {
+    color: rgb(3, 133, 3);
+}
