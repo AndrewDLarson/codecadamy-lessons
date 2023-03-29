@@ -95,3 +95,4 @@ const myField = new Field([
 
 myField.playGame()
 
+//test
