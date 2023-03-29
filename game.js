@@ -123,3 +123,4 @@ class Field {
 const myField = new Field(Field.generateField(10, 10))
 myField.playGame()
 
+//test
