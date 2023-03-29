@@ -16,9 +16,6 @@ class Field {
       console.log(this.field[i].join(""))
     }
   }
-
-  
-
   playGame() {
     this.print()
       while (this.field[this.x][this.y] !== hat && this.field[this.x][this.y] !== hole) {
@@ -82,17 +79,48 @@ class Field {
        }
     }
   }
+  static generateField(height, width) {
+    let array = [];
+    let randomNumber = () => {
+         return Math.floor(Math.random()*5);
+          };
+    const randomTile = () => {
+      if (randomNumber() === 4) {
+        return hole;
+      } else {
+        return fieldCharacter;
+      }
+    }
+    for (let i = 0; i < height; i++) {
+      array.push([]);
+      for (let j = 0; j < width; j++) {
+      array[i].push(randomTile());
+      }
+    }
+    let randomX = () => {
+      return Math.floor(Math.random()*height)
+    };
+    let randomY = () => {
+      return Math.floor(Math.random()*width)
+    };
+    array[randomX()][randomY()] = hat;
+    if (array[0][0] === hat) {
+      array[1][0] = hat;
+    }
+    array[0][0] = pathCharacter;
+    return array
+  }
 }
 
 
 
 
-const myField = new Field([
+/*const myField = new Field([
   ['*', '░', '░'],
   ['░', 'O', '░'],
   ['░', '^', '░'],
-]);
-
+]);*/
+const myField = new Field(Field.generateField(10, 10))
 myField.playGame()
 
 //test
